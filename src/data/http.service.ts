@@ -24,11 +24,11 @@ export const UpdateUser = async(user:Users)=>{
         phone:user.phone,
         website:user.website
     }
-    await axios.post(`https://jsonplaceholder.typicode.com/users/update/${user.id}`,body);
+    await axios.put(`https://jsonplaceholder.typicode.com/users/update/${user.id}`,body);
     
 }
 
 export const deleteUser = async(userId:number)=>{
-    await axios.delete(`https://jsonplaceholder.typicode.com/users/delete/${userId}`);
+   return await axios.delete(`https://jsonplaceholder.typicode.com/users/delete/${userId}`);
     
 }

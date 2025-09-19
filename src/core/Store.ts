@@ -1,13 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import userReducer from "../shared/slicers/UserSlice"; // ✅ reducer export
+import userReducer from "../shared/slicers/UserSlice";
 
 const store = configureStore({
   reducer: {
-    user: userReducer, // lowercase key is recommended
+    User: userReducer,
   },
 });
 
-export type RootState = ReturnType<typeof store.getState>;
+// Beginner-friendly way with less complex syntax
+export type RootState = {
+  User: ReturnType<typeof userReducer>;
+};
 export type AppDispatch = typeof store.dispatch;
 
 export default store;
+

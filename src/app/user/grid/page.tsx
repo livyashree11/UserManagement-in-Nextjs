@@ -38,11 +38,11 @@ export default function Grid(){
 
        const onUpdateClick = (user:Users)=>{
         dispatch(setUserData(user))
-          router.push('/user/update');
+          router.push('/user/createupdate');
        }
     return(
         <>
-        <section className="flex flex-col justify-center items-start p-10">
+        <section className="min-h-screen flex flex-col justify-center items-start p-10 bg-purple-200">
             <Button variant = "outlined" onClick={()=>router.push('/create')} >Create User</Button>
          <TableContainer component={Paper} className="border border-blue-400 rounded-md p-5 m-5 w-[90%]">
             <Table>
